@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
       - name: Cache node_modules
         uses: actions/cache@v3
         with:
@@ -44,7 +46,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npx semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
       - name: Deploy to Staging
         if: github.event_name ==' push'
         run: npx surge --project ./build --domain placid-wool.surge.sh
