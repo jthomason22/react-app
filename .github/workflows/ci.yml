@@ -53,7 +53,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
       - name: Deploy to Staging
-        if: github.event_name ==' push'
+        if: github.event_name =='push'
         run: npx surge --project ./build --domain placid-wool.surge.sh
         env: 
           SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
