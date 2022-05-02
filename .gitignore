@@ -24,3 +24,5 @@ yarn-error.log*
 
 build.zip
 coverage.zip
+
+commitlint.config.js
