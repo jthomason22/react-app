@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env: 
+      SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
+      SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}    
     steps:
       - uses: actions/checkout@v3
         with:
@@ -53,8 +56,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
       - name: Deploy to Staging
-        if: github.event_name =='push' && github.ref == 'refs/heads/main'
+        if: github.event_name =='push' && github.ref == 'refs/heads/develop'
         run: npx surge --project ./build --domain placid-wool.surge.sh
-        env: 
-          SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
-          SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
+      - name: Deploy to Production
+        if: github.event_name =='push' && github.ref == 'refs/heads/main'
+        run: npx surge --project ./build --domain immense-money.surge.sh
