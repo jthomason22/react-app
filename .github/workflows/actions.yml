@@ -1,0 +1,17 @@
+name: Actions
+on:
+  push:
+    branches: [main]
+jobs:
+  testing-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: RUn Hello Action
+        uses: ./.github/actions/hello
+        id: hello
+        with:
+          who-to-great: "World"
+      - run: |
+          echo "Time: ${{ steps.hello.outputs.time }}"
