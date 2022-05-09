@@ -8781,7 +8781,7 @@ try {
     core.endGroup();
     screenTop
 
-    core.exportVariable("(HELLO", "Hellos");
+    core.exportVariable("HELLO", "Hellos");
     } catch (error) {
         core.setFailed(error.message);
     }
