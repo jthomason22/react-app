@@ -1,7 +1,6 @@
 name: Actions
-on:
-    push:
-        branches: [main]
+on: push
+
 jobs:
     testing-actions:
         runs-on: ubuntu-latest
@@ -12,6 +11,11 @@ jobs:
               uses: ./.github/actions/hello
               id: hello
               with:
-                  who-to-greet: "World"
-            - run: |
+                  who-to-greet: "World!"
+            - name: Get Time
+              run: |
                   echo "Time: ${{ steps.hello.outputs.time }}"
+            - name: Run prebuilt Hello World
+              uses: actions/hello-world-javascript-action@v1.1
+              with:
+                  who-to-greet: "Mona the Octocat"
