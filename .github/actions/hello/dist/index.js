@@ -8779,8 +8779,7 @@ try {
     core.startGroup('Logging github object')
     console.log(JSON.stringify(github, null, "\t"));
     core.endGroup();
-    screenTop
-
+    
     core.exportVariable("HELLO", "Hellos");
     } catch (error) {
         core.setFailed(error.message);
