@@ -12,8 +12,8 @@ jobs:
               id: issue
               with:
                   token: ${{ secrets.GIT_TOKEN }}
-                  title: Title,
-                  body: Body,
+                  title: A New Issue
+                  body: New Issue Body
                   assignees: |
                       jthomason22
             - run: |
