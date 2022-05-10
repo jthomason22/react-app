@@ -7,6 +7,17 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v3
+            - name: Run Issue Action
+              uses: ./.github/actions/issue
+              id: issue
+              with:
+                token: ${{ secrets.TOKEN }}
+                title: Title,
+                body: Body,
+                assignees: |
+                  jthomason
+            - run: | 
+                echo $ {{ steps.issue.outputs.issue }}
             - name: Run Hello Action
               uses: ./.github/actions/hello
               id: hello

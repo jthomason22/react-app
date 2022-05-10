@@ -24,3 +24,5 @@ yarn-error.log*
 
 build.zip
 coverage.zip
+
+build_issues.sh
