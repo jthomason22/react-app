@@ -15,7 +15,7 @@ jobs:
                   title: Title,
                   body: Body,
                   assignees: |
-                      jthomason
+                      jthomason22
             - run: |
                   echo $ {{ steps.issue.outputs.issue }}
             - name: Run Hello Action
