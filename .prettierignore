@@ -6,3 +6,5 @@ package-lock.json
 public
 README.md
 .github/actions/hello/dist
+.github/actions/issue/dist
+build_issues.sh
