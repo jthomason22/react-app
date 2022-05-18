@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-if [true]
+if [ true ] 
 then
     echo "Error test"
     exit 1
