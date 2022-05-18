@@ -19,7 +19,7 @@ jobs:
             - run: |
                   echo $ {{ steps.issue.outputs.issue }}
             - name: Run Hello Action
-              uses: ./.github/actions/hello
+              uses: ./.github/actions/hello-docker
               id: hello
               with:
                   who-to-greet: "World!"
