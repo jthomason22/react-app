@@ -1,10 +1,10 @@
 #!/bin/sh -l
 
-if [ true ] 
-then
-    echo "Error test"
-    exit 1
-fi
+#if [ true ] 
+#then
+#    echo "Error test"
+#    exit 1
+#fi
 
 echo "::debug ::Debug Message"
 echo "::warning ::Warning Message"
