@@ -26,3 +26,5 @@ build.zip
 coverage.zip
 
 build_issues.sh
+
+vendor

@@ -7,6 +7,11 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v3
+            - name: Send a Slack Message
+              uses: ./.github/actions/slack
+              with:
+                slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+                message: Hello Slack
             #- name: Run Issue Action
             #uses: ./.github/actions/issue
             #id: issue
@@ -16,8 +21,8 @@ jobs:
             #    body: New Issue Body
             #    assignees: |
             #        jthomason22
-            - run: |
-                  echo $ {{ steps.issue.outputs.issue }}
+            #- run: |
+            #      echo $ {{ steps.issue.outputs.issue }}
             - name: Run Hello Action
               uses: ./.github/actions/hello-docker
               id: hello
